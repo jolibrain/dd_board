@@ -30,5 +30,5 @@ rlog.ddb_logger()
 
 ```
 
-You can start TensorBoard right away:
-tensorboard --logdir runs
+You can then start TensorBoard:
+```$tensorboard --logdir runs```
