@@ -4,13 +4,13 @@ from datetime import datetime
 from tensorboard_logger import configure as tsbl_configure, log_value as tsbl_log_value
 
 class DDBoard:
-	"""Version 0.9
+	"""Version 0.1
 	Converts a log to "TensorBoard compatible" data.
 	- log_file = log file used for the graph
 	- run_dir = directory used by tensorboard logger
 	- flush_time = interval between 2 flushes of the log file
 	"""
-	
+
 	# Default values, if needed
 	log_file = "mobilenet_ilsvrc_cleaned.log"
 	run_dir = "runs/run-"
