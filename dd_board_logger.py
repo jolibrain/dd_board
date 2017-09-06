@@ -12,7 +12,7 @@ class DDBoard:
 	- tb_dir = directory used by tensorboard logger
 	- flush_time = interval between 2 flushes of tb cache
 	"""
-	
+
 	# Default values
 	tb_dir = "/opt/tensorboard/runs" # useful to have a default?
 	flush_time = 2 # if needed? tb apparently refreshes/flushes its cache after each event written.
