@@ -51,4 +51,6 @@ for line in json_src:
 ```
 
 You can then start TensorBoard:
-```$tensorboard --logdir tb_dir```
+```
+$tensorboard --logdir tb_dir
+```
