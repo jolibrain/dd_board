@@ -1,15 +1,15 @@
 # dd_board
-Version 0.3
+Version 0.4
 
 Works with: Python 2.7
 
-Version 0.3
 Converts logs to "TensorBoard compatible" data.
 
-Parameters:
-- log_src = string, log source to analyze
-- tb_dir = string, cache directory used by tensorboard
-- del_dir = bolean, False if ommited. If set to false, the new graph is displayed after the preceding, if any. If set to true, the tensorboard cache directory will be deleted and the new graph will be the only one to appear.
+Parameters (except for del_dir, they must be written between quotes, even if left empty):
+- log_src = string, log source to analyze (flow, log file or any Python dict / JSON object).
+- base_dir = string, general cache directory used by tensorboard. If not existing, will be created.
+- sub_dir = string, subdirectory of the current run used by tensorboard. If not existing, will be created.
+- del_dir = bolean, *False* if ommited. If set to *False*, the new graph is displayed after the preceding one, if any. If set to *True*, the tensorboard cache directory (*base_dir/sub_dir*) will be deleted and the new graph will be the only one to appear.
 
 Requirements:
 -------------
@@ -24,7 +24,7 @@ from dd_board_logger import DDBoard
 
 do_what_have_to_be_done_before()
 
-read_dd = DDBoard(tb_dir, del_dir)
+read_dd = DDBoard(base_dir, sub_dir, del_dir)
 ```
 
 Then, with a log flow:
@@ -51,5 +51,7 @@ for line in json_src:
 
 You can then start TensorBoard in console:
 ```
-$tensorboard --logdir tb_dir
+$tensorboard --logdir base_dir
+
 ```
+(base_dir without quotes, here. Ex: *tensorboard --logdir runs*)
