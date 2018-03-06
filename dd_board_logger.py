@@ -49,7 +49,8 @@ class DDBoard:
 		for key in obs.keys():	
 				if (key != "iteration"):
 						value = obs[key]
-						tbl_log_value(key, obs[key], int(obs["iteration"]))
+                                                if isinstance(value,float):
+						        tbl_log_value(key, obs[key], int(obs["iteration"]))
 						
 	def ddb_logger_file(self,json_file):
 		"""json_file = the json file to be analyzed"""
